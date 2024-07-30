@@ -7,12 +7,14 @@ const Pagination = ({
   pageSize,
   onPageChange,
   setPageSize,
+  setCurrentPage,
 }) => {
   const [pages, setPages] = useState([]);
   const pageCount = Math.ceil(totalItems / pageSize);
 
   const handlePageSizeChange = (event) => {
     setPageSize(+event.target.value);
+    setCurrentPage(1);
   };
   useEffect(() => {
     setPages(calculatePages(currentPage, pageCount));

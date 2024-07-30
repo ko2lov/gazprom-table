@@ -35,6 +35,7 @@ function DataTable() {
         pageSize={pageSize}
         onPageChange={handlePageChange}
         setPageSize={setPageSize}
+        setCurrentPage={setCurrentPage}
       />
       <table className="table table-hover table-striped table-bordered">
         <thead>
