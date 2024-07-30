@@ -6,7 +6,7 @@
 
    ```sh
    https://github.com/ko2lov/gazprom-table.git
-   cd gazrpom-app
+   cd gazprom-table
    ```
 
 #### 2. Структура проекта
