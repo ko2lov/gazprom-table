@@ -6,15 +6,13 @@ services:
       context: ./client
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    depends_on:
-      - server
+      - "8085:8085"
 
   server:
     build:
       context: ./server
       dockerfile: Dockerfile
     ports:
-      - "8085:8085"
+      - "5001:5001"
     volumes:
       - ./server/data:/app/data

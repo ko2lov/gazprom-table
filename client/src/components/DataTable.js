@@ -13,7 +13,7 @@ function DataTable() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8085/api/data`, {
+      const response = await axios.get(`http://127.0.0.1:5001/api/data`, {
         params: { page: currentPage, limit: pageSize },
       });
       setData(response.data.data);

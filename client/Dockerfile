@@ -1,21 +1,26 @@
-# Base image
+# Используем базовый образ Node.js
 FROM node:14
 
-# Set working directory
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Install dependencies
+# Копируем package.json и package-lock.json
 COPY package*.json ./
+
+# Устанавливаем зависимости
 RUN npm install
 
-# Copy source code
+# Копируем исходный код приложения
 COPY . .
 
-# Build the app
+# Собираем React-приложение
 RUN npm run build
 
-# Expose the port
-EXPOSE 3000
+# Устанавливаем 'serve' для обслуживания статических файлов
+RUN npm install -g serve
 
-# Start the app
-CMD ["npm", "start"]
+# Открываем порт 8085
+EXPOSE 8085
+
+# Запускаем приложение с помощью 'serve'
+CMD ["serve", "-s", "build", "-l", "8085"]
